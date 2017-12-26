@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-5.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="hibernate.connection.username">SYSTEM</property>
+		<property name="hibernate.connection.password">12345</property>
+		<property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<!-- One to One Unidirectional Mapping -->
+		<mapping class="com.hibernate.OnetoOneUni.Student" />
+		<mapping class="com.hibernate.OnetoOneUni.Address" />
+
+		<!-- One to One Bidirectional Mapping -->
+		<mapping class="com.hibernate.OnetoOneBi.StudentBi" />
+		<mapping class="com.hibernate.OnetoOneBi.AddressBi" />
+		
+		<!-- One to Many Unidirectional Mapping -->
+		<mapping class="com.hibernate.OneToManyUni.SubjectsOneToManyUni" />
+		<mapping class="com.hibernate.OneToManyUni.StudentsOneToManyUni" />
+		
+		<!-- Many to one Unidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToOneUni.Company" />
+		<mapping class="com.hibernate.ManyToOneUni.Employee" />
+		
+		<!-- Many to Many Unidirectional Mapping -->
+		<mapping class="com.hibernate.ManyToManyUni.Books" />
+		<mapping class="com.hibernate.ManyToManyUni.Authors" />
+		
+	
+		
+		
+	</session-factory>
+</hibernate-configuration>
